@@ -5,6 +5,7 @@ namespace Laravel\Tinker\Console;
 use Psy\Shell;
 use Psy\Configuration;
 use Illuminate\Console\Command;
+use Laravel\Tinker\TinkerCaster;
 use Symfony\Component\Console\Input\InputArgument;
 
 class TinkerCommand extends Command
