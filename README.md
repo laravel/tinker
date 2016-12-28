@@ -9,7 +9,7 @@
 
 ## Introduction
 
-Laravel Tinker is a powerful REPL for the Laravel framework, abstracted from the core for the Laravel 5.4 release.
+Laravel Tinker is a powerful REPL for the Laravel framework.
 
 ## Installation
 
@@ -17,7 +17,7 @@ To get started with Laravel Tinker, simply run:
 
     composer require laravel/tinker
 
-Now register the `Laravel\Socialite\SocialiteServiceProvider` in your `config/app.php` file:
+Next, register the `Laravel\Socialite\SocialiteServiceProvider` in your `config/app.php` file:
 
 ```php
 'providers' => [
@@ -29,7 +29,7 @@ Now register the `Laravel\Socialite\SocialiteServiceProvider` in your `config/ap
 
 ## Basic Usage
 
-From your console, simply call `php artisan tinker`, and you're away!
+From your console, execute the `php artisan tinker` command.
 
 ## License
 
