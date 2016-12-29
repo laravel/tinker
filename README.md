@@ -17,7 +17,7 @@ To get started with Laravel Tinker, simply run:
 
     composer require laravel/tinker
 
-Next, register the `Laravel\Socialite\SocialiteServiceProvider` in your `config/app.php` file:
+Next, register the `Laravel\Tinker\TinkerServiceProvider` in your `config/app.php` file:
 
 ```php
 'providers' => [
