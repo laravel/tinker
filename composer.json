@@ -37,5 +37,8 @@
     },
     "config": {
         "sort-packages": true
+    },
+    "suggest": {
+        "illuminate/database": "The Illuminate Database package (~5.1)."
     }
 }
