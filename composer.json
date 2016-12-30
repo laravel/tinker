@@ -13,6 +13,7 @@
         "php": ">=5.5.9",
         "illuminate/console": "~5.1",
         "illuminate/contracts": "~5.1",
+        "illuminate/database": "~5.1",
         "illuminate/support": "~5.1",
         "psy/psysh": "0.7.*|0.8.*",
         "symfony/var-dumper": "~3.0"
