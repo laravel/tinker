@@ -10,7 +10,7 @@ use Symfony\Component\Console\Input\InputArgument;
 class TinkerCommand extends Command
 {
     /**
-     * artisan commands to include in the tinker shell.
+     * Artisan commands to include in the tinker shell.
      *
      * @var array
      */
