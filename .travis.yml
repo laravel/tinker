@@ -1,15 +1,52 @@
 language: php
 
 php:
-  - 5.5.9
-  - 5.5
-  - 5.6
-  - 7.0
-  - 7.1
   - hhvm
 
 sudo: false
 
-install: travis_retry composer install --no-interaction --prefer-dist
+cache:
+  directories:
+    - $HOME/.composer/cache
+
+env:
+  global:
+    - laravel='*'
+
+matrix:
+  include:
+    - php: 5.5.9
+      env: laravel='5.1'
+    - php: 5.5.9
+      env: laravel='5.2'
+    - php: 5.5
+      env: laravel='5.1'
+    - php: 5.5
+      env: laravel='5.2'
+    - php: 5.6
+      env: laravel='5.1'
+    - php: 5.6
+      env: laravel='5.2'
+    - php: 5.6
+      env: laravel='5.3'
+    - php: 7.0
+      env: laravel='5.1'
+    - php: 7.0
+      env: laravel='5.2'
+    - php: 7.0
+      env: laravel='5.3'
+    - php: 7.1
+      env: laravel='5.1'
+    - php: 7.1
+      env: laravel='5.2'
+    - php: 7.1
+      env: laravel='5.3'
+  fast_finish: true
+
+before_script:
+  - if [[ $laravel = '*' ]]; then travis_retry composer install --no-interaction --prefer-dist; fi
+  - if [[ $laravel = '5.1' ]]; then travis_retry composer require "illuminate/contracts=~5.1" --no-interaction --prefer-dist; fi
+  - if [[ $laravel = '5.2' ]]; then travis_retry composer require "illuminate/contracts=~5.2" --no-interaction --prefer-dist; fi
+  - if [[ $laravel = '5.3' ]]; then travis_retry composer require "illuminate/contracts=~5.3" --no-interaction --prefer-dist; fi
 
 script: vendor/bin/phpunit --verbose
