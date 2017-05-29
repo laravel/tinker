@@ -31,6 +31,8 @@ Next, register the `Laravel\Tinker\TinkerServiceProvider` in your `config/app.ph
 
 From your console, execute the `php artisan tinker` command.
 
+Note: _Run `php artisan config:cache` might be necessary._
+
 ## License
 
 Laravel Tinker is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
