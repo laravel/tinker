@@ -7,20 +7,21 @@ use Psy\Shell;
 class ClassAliasAutoloader
 {
     /**
-     * @var  array
+     * @var array
      */
     protected $classes = [];
 
     /**
-     * @var  Shell
+     * @var \Psy\Shell
      */
     protected $shell;
     
     /**
      * Constructor
      *
-     * @param  Shell  $shell
-     * @param  string  $classMapPath
+     * @param \Psy\Shell $shell
+     * @param string $classMapPath
+     * @return void
      */
     public function __construct(Shell $shell, $classMapPath)
     {
@@ -43,6 +44,8 @@ class ClassAliasAutoloader
     
     /**
      * Register the SPL autoloader
+     *
+     * @return void
      */
     public function registerAutoloader()
     {
@@ -53,6 +56,7 @@ class ClassAliasAutoloader
      * Find the closest class by name
      *
      * @param string $findClass
+     * @return void
      */
     public function aliasClass($findClass)
     {

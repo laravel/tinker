@@ -56,7 +56,7 @@ class TinkerCommand extends Command
 
         (new ClassAliasAutoloader(
             $shell, 
-            $this->getLaravel()->basePath().'/vendor/composer/autoload_classmap.php'
+            $this->getLaravel()->basePath('/vendor/composer/autoload_classmap.php')
         ))->registerAutoloader();
 
         $shell->run();
