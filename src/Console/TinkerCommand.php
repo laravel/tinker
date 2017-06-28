@@ -54,14 +54,10 @@ class TinkerCommand extends Command
         $shell->addCommands($this->getCommands());
         $shell->setIncludes($this->argument('include'));
 
-        $config = $this->getLaravel()->make('config');
-        if ($config && $config->get('tinker.guess_fqcn', false)) {
-            (new ClassAliasAutoloader(
-                $shell, 
-                base_path('vendor/composer/autoload_classmap.php'), 
-                $config->get('tinker.guess_fqcn_vendor', false)
-            ))->registerAutoloader();
-        }
+        (new ClassAliasAutoloader(
+            $shell, 
+            $this->getLaravel()->basePath().'/vendor/composer/autoload_classmap.php'
+        ))->registerAutoloader();
 
         $shell->run();
     }

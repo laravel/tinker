@@ -22,7 +22,7 @@ class ClassAliasAutoloader
      * @param  Shell  $shell
      * @param  string  $classMapPath
      */
-    public function __construct(Shell $shell, $classMapPath, $includeVendor = false)
+    public function __construct(Shell $shell, $classMapPath)
     {
         $this->shell = $shell;
 
@@ -30,11 +30,7 @@ class ClassAliasAutoloader
         $classFiles = require $classMapPath;
 
         foreach ($classFiles as $fqcn => $path) {
-            if (false === strpos($fqcn, '\\')) {
-                continue;
-            }
-
-            if (!$includeVendor && 0 === strpos($path, $vendorDir)) {
+            if (false === strpos($fqcn, '\\') || 0 === strpos($path, $vendorDir)) {
                 continue;
             }
 
