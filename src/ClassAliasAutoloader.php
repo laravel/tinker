@@ -19,8 +19,8 @@ class ClassAliasAutoloader
     /**
      * Constructor
      *
-     * @param \Psy\Shell $shell
-     * @param string $classMapPath
+     * @param  \Psy\Shell  $shell
+     * @param  string  $classMapPath
      * @return void
      */
     public function __construct(Shell $shell, $classMapPath)
@@ -55,7 +55,7 @@ class ClassAliasAutoloader
     /**
      * Find the closest class by name
      *
-     * @param string $findClass
+     * @param  string  $findClass
      * @return void
      */
     public function aliasClass($findClass)
