@@ -27,9 +27,11 @@ class TinkerServiceProvider extends ServiceProvider
 
         $this->commands(['command.tinker']);
 
-        $this->publishes([
-            __DIR__.'/../config/tinker.php' => $this->app['path.config'].DIRECTORY_SEPARATOR.'tinker.php',
-        ]);
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__.'/../config/tinker.php' => $this->app['path.config'].DIRECTORY_SEPARATOR.'tinker.php',
+            ]);
+        }
     }
 
     /**
