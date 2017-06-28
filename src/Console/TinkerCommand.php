@@ -5,6 +5,7 @@ namespace Laravel\Tinker\Console;
 use Psy\Shell;
 use Psy\Configuration;
 use Illuminate\Console\Command;
+use Laravel\Tinker\ClassAliasAutoloader;
 use Symfony\Component\Console\Input\InputArgument;
 
 class TinkerCommand extends Command
@@ -52,6 +53,14 @@ class TinkerCommand extends Command
         $shell = new Shell($config);
         $shell->addCommands($this->getCommands());
         $shell->setIncludes($this->argument('include'));
+
+        if (config('tinker.guess_fqcn', false)) {
+            (new ClassAliasAutoloader(
+                $shell, 
+                base_path('vendor/composer/autoload_classmap.php'), 
+                config('tinker.guess_fqcn_vendor', false)
+            ))->registerAutoloader();
+        }
 
         $shell->run();
     }
