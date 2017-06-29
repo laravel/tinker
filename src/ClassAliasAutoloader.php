@@ -81,4 +81,14 @@ class ClassAliasAutoloader
             class_alias($fullName, $class);
         }
     }
+
+    /**
+     * Handle the destruction of the instance.
+     *
+     * @return void
+     */
+    public function __destruct()
+    {
+        spl_autoload_unregister([$this, 'aliasClass']);
+    }
 }
