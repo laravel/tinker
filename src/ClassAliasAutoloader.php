@@ -3,21 +3,26 @@
 namespace Laravel\Tinker;
 
 use Psy\Shell;
+use Illuminate\Support\Str;
 
 class ClassAliasAutoloader
 {
     /**
+     * The shell instance.
+     *
+     * @var \Psy\Shell
+     */
+    protected $shell;
+
+    /**
+     * All of the discovered classes.
+     *
      * @var array
      */
     protected $classes = [];
 
     /**
-     * @var \Psy\Shell
-     */
-    protected $shell;
-    
-    /**
-     * Constructor
+     * Create a new alias loader instance.
      *
      * @param  \Psy\Shell  $shell
      * @param  string  $classMapPath
@@ -27,21 +32,23 @@ class ClassAliasAutoloader
     {
         $this->shell = $shell;
 
-        $vendorDir = dirname(dirname($classMapPath));
-        $classFiles = require $classMapPath;
+        $vendorPath = dirname(dirname($classMapPath));
 
-        foreach ($classFiles as $fqcn => $path) {
-            if (false === strpos($fqcn, '\\') || 0 === strpos($path, $vendorDir)) {
+        $classes = require $classMapPath;
+
+        foreach ($classes as $class => $path) {
+            if (! Str::contains($class, '\\') || Str::startsWith($path, $vendorPath)) {
                 continue;
             }
 
-            $className = last(explode('\\', $fqcn));
-            if (!isset($this->classes[$className])) {
-                $this->classes[$className] = $fqcn;
+            $name = class_basename($class);
+
+            if (! isset($this->classes[$name])) {
+                $this->classes[$name] = $class;
             }
         }
     }
-    
+
     /**
      * Register the SPL autoloader
      *
@@ -51,26 +58,27 @@ class ClassAliasAutoloader
     {
         spl_autoload_register([$this, 'aliasClass']);
     }
-    
+
     /**
      * Find the closest class by name
      *
-     * @param  string  $findClass
+     * @param  string  $class
      * @return void
      */
-    public function aliasClass($findClass)
+    public function aliasClass($class)
     {
-        if (false !== strpos($findClass, '\\')) {
+        if (Str::contains($class, '\\')) {
             return;
         }
 
-        $fqcn = isset($this->classes[$findClass])
-            ? $this->classes[$findClass]
+        $fullName = isset($this->classes[$class])
+            ? $this->classes[$class]
             : false;
-        
-        if ($fqcn) {
-            $this->shell->writeStdout("[!] Aliasing '$findClass' to '$fqcn' for this Tinker session.\n");
-            class_alias($fqcn, $findClass);
+
+        if ($fullName) {
+            $this->shell->writeStdout("[!] Aliasing '{$class}' to '{$fullName}' for this Tinker session.\n");
+
+            class_alias($fullName, $class);
         }
     }
 }
