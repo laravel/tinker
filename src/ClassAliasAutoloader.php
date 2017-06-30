@@ -30,11 +30,9 @@ class ClassAliasAutoloader
      */
     public static function register(Shell $shell, $classMapPath)
     {
-        $loader = new static($shell, $classMapPath);
-
-        spl_autoload_register([$loader, 'aliasClass']);
-
-        return $loader;
+        return tap(new static($shell, $classMapPath), function ($loader) {
+            spl_autoload_register([$loader, 'aliasClass']);
+        });
     }
 
     /**
@@ -95,7 +93,6 @@ class ClassAliasAutoloader
      */
     public function unregister()
     {
-        // this is safe, even if not registred
         spl_autoload_unregister([$this, 'aliasClass']);
     }
 
