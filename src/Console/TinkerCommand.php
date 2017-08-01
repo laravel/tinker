@@ -2,6 +2,7 @@
 
 namespace Laravel\Tinker\Console;
 
+use Composer\Autoload\ClassLoader;
 use Psy\Shell;
 use Psy\Configuration;
 use Illuminate\Console\Command;
@@ -37,6 +38,7 @@ class TinkerCommand extends Command
      * Execute the console command.
      *
      * @return void
+     * @throws \ReflectionException
      */
     public function handle()
     {
@@ -54,9 +56,10 @@ class TinkerCommand extends Command
         $shell->addCommands($this->getCommands());
         $shell->setIncludes($this->argument('include'));
 
-        $path = $this->getLaravel()->basePath('vendor/composer/autoload_classmap.php');
+        $reflection = new \ReflectionClass(ClassLoader::class);
+        $path = dirname($reflection->getFileName(), 2);
 
-        $loader = ClassAliasAutoloader::register($shell, $path);
+        $loader = ClassAliasAutoloader::register($shell, $path . '/autoload.php');
 
         try {
             $shell->run();
