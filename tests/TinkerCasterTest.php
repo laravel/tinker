@@ -2,11 +2,11 @@
 
 namespace Tests;
 
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use Laravel\Tinker\TinkerCaster;
 use Illuminate\Support\Collection;
 
-class TinkerCasterTest extends PHPUnit_Framework_TestCase
+class TinkerCasterTest extends TestCase
 {
     public function testCanCastCollection()
     {
