@@ -34,6 +34,13 @@ class TinkerCommand extends Command
     protected $description = 'Interact with your application';
 
     /**
+     * Custom, user-defined casters for even better experience.
+     *
+     * @var array
+     */
+    protected $casters = [];
+
+    /**
      * Execute the console command.
      *
      * @return void
@@ -102,7 +109,20 @@ class TinkerCommand extends Command
             $casters['Illuminate\Foundation\Application'] = 'Laravel\Tinker\TinkerCaster::castApplication';
         }
 
-        return $casters;
+        return array_merge($casters, $this->casters);
+    }
+
+    /**
+     * Set cusomized casters for this tinker session.
+     *
+     * @param  array $casters
+     * @return $this
+     */
+    public function setCasters(array $casters)
+    {
+        $this->casters = $casters;
+
+        return $this;
     }
 
     /**
