@@ -30,6 +30,8 @@ class TinkerServiceProvider extends ServiceProvider
         } elseif ($this->app instanceof LumenApplication) {
             $this->app->configure('tinker');
         }
+
+        $this->mergeConfigFrom($source, 'tinker');
     }
 
     /**
