@@ -1,0 +1,16 @@
+<?php
+
+return [
+
+    /*
+    |--------------------------------------------------------------------------
+    | Prefixes to be excluded when generating class aliases for tinker.
+    | You can provide fully-qualified class names to exclude specific classes,
+    | or namespaces to exclude multiple classes within that namespace.
+    |--------------------------------------------------------------------------
+    */
+
+    'exclude_aliases' => [
+    ],
+
+];

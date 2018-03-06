@@ -50,8 +50,17 @@ class ClassAliasAutoloader
 
         $classes = require $classMapPath;
 
+        $excludedAliases = collect(config('tinker.exclude_aliases'));
+
         foreach ($classes as $class => $path) {
             if (! Str::contains($class, '\\') || Str::startsWith($path, $vendorPath)) {
+                continue;
+            }
+
+            if (! $excludedAliases->filter(
+                function ($alias) use ($class) {
+                    return Str::startsWith($class, $alias);
+                })->isEmpty()) {
                 continue;
             }
 
