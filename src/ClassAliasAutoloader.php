@@ -34,7 +34,7 @@ class ClassAliasAutoloader
             spl_autoload_register([$loader, 'aliasClass']);
         });
     }
-
+ 
     /**
      * Create a new alias loader instance.
      *
@@ -50,7 +50,7 @@ class ClassAliasAutoloader
 
         $classes = require $classMapPath;
 
-        $excludedAliases = collect(config('tinker.dont_alias', []));
+        $excludedAliases = $this->getExcludedAliases();
 
         foreach ($classes as $class => $path) {
             if (! Str::contains($class, '\\') || Str::startsWith($path, $vendorPath)) {
@@ -69,6 +69,16 @@ class ClassAliasAutoloader
                 $this->classes[$name] = $class;
             }
         }
+    }
+    
+    /**
+     * Get excludedAliases from config file
+     *
+     * @return \Illuminate\Support\Collection
+     */
+    protection function getExcludedAliases()
+    {
+        return collect(config('tinker.dont_alias', []));
     }
 
     /**
