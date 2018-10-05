@@ -31,7 +31,7 @@ return [
     |
     */
 
-    // 'options_path' => getenv('PSYSH_CONFIG'),
+    // 'options_path' => __FILE__,
 
     /*
     |--------------------------------------------------------------------------
@@ -43,6 +43,6 @@ return [
     |
     */
 
-    // 'prompt' => config('app.name - Tinker') . '>>>',
+    // 'prompt' => '► ',
 
 ];
