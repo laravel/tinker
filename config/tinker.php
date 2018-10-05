@@ -2,6 +2,9 @@
 
 return [
 
+
+    ### Tinker Options ### 
+
     /*
     |--------------------------------------------------------------------------
     | Alias Blacklist
@@ -14,5 +17,32 @@ return [
     */
 
     'dont_alias' => [],
+
+
+    ### Optional ###  - Psy Shell Custom Options 
+
+    /*
+    |--------------------------------------------------------------------------
+    | Psy Custom Options Path
+    |--------------------------------------------------------------------------
+    |
+    | Specify a path for mounting custom Psy shell configuration options
+    | Uncomment this line to enable Psy custom options.
+    |
+    */
+
+    // 'options_path' => getenv('PSYSH_CONFIG'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Psy Custom Prompt.
+    |--------------------------------------------------------------------------
+    |
+    | You can customize your Tinker Shell's prompt. Uncomment this line to 
+    | define a custom prompt.
+    |
+    */
+
+    // 'prompt' => config('app.name - Tinker') . '>>>',
 
 ];
