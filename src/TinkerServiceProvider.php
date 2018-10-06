@@ -23,7 +23,16 @@ class TinkerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $source = realpath($raw = __DIR__ . '/../config/tinker.php') ?: $raw;
+        // Paths when already published and set in app's configs
+        if(false === getenv('PSYSH_CONFIG'))
+            if(config('tinker.options_path'))
+                putenv('PSYSH_CONFIG=' . $source = config('tinker.options_path'));
+
+        // Initial state, when not yet published, as not all apps will have published Tinker configs.
+        $source = isset($source) ? $source : ( 
+            realpath( $raw = __DIR__ . '/../config/tinker.php') ?: $raw 
+        );
+
 
         if ($this->app instanceof LaravelApplication && $this->app->runningInConsole()) {
             $this->publishes([$source => config_path('tinker.php')]);
