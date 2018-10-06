@@ -23,16 +23,16 @@ class TinkerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
-        // If not already set, will inspect the application configuration options
-        // to check if a custom options_path has been set, if so, will signal
-        // Psy shell to mount custom options when it starts, PSYSH_CONFIG env var.
+        // Paths when already published and set in app's configs
         if(false === getenv('PSYSH_CONFIG'))
             if(config('tinker.options_path'))
-                putenv('PSYSH_CONFIG=' . config('tinker.options_path'));
+                putenv('PSYSH_CONFIG=' . $source = config('tinker.options_path'));
 
+        // Initial state, when not yet published, as not all apps will have published Tinker configs.
+        $source = isset($source) ? $source : ( 
+            realpath( $raw = __DIR__ . '/../config/tinker.php') ?: $raw 
+        );
 
-        $source = realpath($raw = __DIR__ . '/../config/tinker.php') ?: $raw;
 
         if ($this->app instanceof LaravelApplication && $this->app->runningInConsole()) {
             $this->publishes([$source => config_path('tinker.php')]);
