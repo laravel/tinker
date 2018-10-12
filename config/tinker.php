@@ -4,6 +4,21 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Custom commands
+    |--------------------------------------------------------------------------
+    |
+    | Sometimes, you might want to make certain console commands available in
+    | Tinker. This option allows you to do just that. Simply provide a list
+    | of commands that you want to expose to Tinker.
+    |
+    */
+
+    'commands' => [
+        // 'quote' => App\Console\Commands\QuoteCommand::class,
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Alias Blacklist
     |--------------------------------------------------------------------------
     |
