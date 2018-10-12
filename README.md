@@ -17,16 +17,6 @@ To get started with Laravel Tinker, simply run:
 
     composer require laravel/tinker
 
-If you are using Laravel 5.5+, there is no need to manually register the service provider. However, if you are using an earlier version of Laravel, register the `TinkerServiceProvider` in your `app` configuration file:
-
-```php
-'providers' => [
-    // Other service providers...
-
-    Laravel\Tinker\TinkerServiceProvider::class,
-],
-```
-
 ## Basic Usage
 
 From your console, execute the `php artisan tinker` command.
