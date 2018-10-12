@@ -4,22 +4,17 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Custom commands
+    | Console Commands
     |--------------------------------------------------------------------------
     |
-    | Sometimes, you might want to make certain console commands available in
-    | Tinker. This option allows you to do just that. Simply provide a list
-    | of commands that you want to expose to Tinker.
-    |
-    | After registering you can call the commands just like other white listed
-    | Artisan commands in Tinker.
-    |
-    |     >>> quote;
+    | This option allows you to add additional Artisan commands that should
+    | be available within the Tinker environment. Once the command is in
+    | this array you may execute the command in Tinker using its name.
     |
     */
 
     'commands' => [
-        // 'quote' => App\Console\Commands\QuoteCommand::class,
+        // App\Console\Commands\ExampleCommand::class,
     ],
 
     /*
