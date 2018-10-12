@@ -11,6 +11,11 @@ return [
     | Tinker. This option allows you to do just that. Simply provide a list
     | of commands that you want to expose to Tinker.
     |
+    | After registering you can call the commands just like other white listed
+    | Artisan commands in Tinker.
+    |
+    |     >>> quote;
+    |
     */
 
     'commands' => [
