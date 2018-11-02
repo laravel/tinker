@@ -21,9 +21,9 @@ To get started with Laravel Tinker, simply run:
 
 From your console, execute the `php artisan tinker` command.
 
-### Dispatching jobs
+### Dispatching Jobs
 
-The `dispatch` helper function as well as the `dispatch` method on your `Dispatchable` class depend on garbage collection to place the job on the queue. Therefore, when using Artisan `tinker`, you should use `Bus::dispatch` or `Queue::push` instead.
+The `dispatch` helper function and `dispatch` method on the `Dispatchable` class depends on garbage collection to place the job on the queue. Therefore, when using `tinker`, you should use `Bus::dispatch` or `Queue::push` to dispatch jobs.
 
 ## License
 
