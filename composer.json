@@ -27,7 +27,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/"
+            "Laravel\\Tinker\\Tests\\": "tests/"
         }
     },
     "extra": {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests;
+namespace Laravel\Tinker\Tests;
 
 use PHPUnit\Framework\TestCase;
 use Laravel\Tinker\TinkerCaster;
