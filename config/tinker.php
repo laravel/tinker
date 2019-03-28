@@ -32,4 +32,19 @@ return [
         'App\Nova',
     ],
 
+
+    /*
+    |--------------------------------------------------------------------------
+    | Psy Shell Config
+    |--------------------------------------------------------------------------
+    |
+    | Optionally, supply an array of configuration values to load.
+    |
+    */
+    'config' => [
+
+        'updateCheck' => 'never',
+
+    ],
+
 ];
