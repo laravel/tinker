@@ -2,10 +2,10 @@
 
 namespace Laravel\Tinker;
 
-use Illuminate\Foundation\Application as LaravelApplication;
 use Illuminate\Support\ServiceProvider;
-use Laravel\Lumen\Application as LumenApplication;
 use Laravel\Tinker\Console\TinkerCommand;
+use Laravel\Lumen\Application as LumenApplication;
+use Illuminate\Foundation\Application as LaravelApplication;
 
 class TinkerServiceProvider extends ServiceProvider
 {
@@ -23,7 +23,7 @@ class TinkerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $source = realpath($raw = __DIR__ . '/../config/tinker.php') ?: $raw;
+        $source = realpath($raw = __DIR__.'/../config/tinker.php') ?: $raw;
 
         if ($this->app instanceof LaravelApplication && $this->app->runningInConsole()) {
             $this->publishes([$source => config_path('tinker.php')]);
