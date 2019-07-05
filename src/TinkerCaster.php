@@ -5,6 +5,9 @@ namespace Laravel\Tinker;
 use Exception;
 use Symfony\Component\VarDumper\Caster\Caster;
 
+/**
+ * @brief This class is kept as a fallback. Casters should be updated in laravel/framework.
+ */
 class TinkerCaster
 {
     /**

@@ -94,16 +94,27 @@ class TinkerCommand extends Command
      */
     protected function getCasters()
     {
-        $casters = [
-            'Illuminate\Support\Collection' => 'Laravel\Tinker\TinkerCaster::castCollection',
-        ];
+        $casters = [];
+        if (class_exists('Illuminate\Support\CollectionCaster')) {
+            $casters['Illuminate\Support\Collection'] = 'Illuminate\Support\CollectionCaster::cast';
+        } else {
+            $casters['Illuminate\Support\Collection'] = 'Laravel\Tinker\TinkerCaster::castCollection';
+        }
 
         if (class_exists('Illuminate\Database\Eloquent\Model')) {
-            $casters['Illuminate\Database\Eloquent\Model'] = 'Laravel\Tinker\TinkerCaster::castModel';
+            if (class_exists('Illuminate\Database\Eloquent\ModelCaster')) {
+                $casters['Illuminate\Database\Eloquent\Model'] = 'Illuminate\Database\Eloquent\ModelCaster::cast';
+            } else {
+                $casters['Illuminate\Database\Eloquent\Model'] = 'Laravel\Tinker\TinkerCaster::castModel';
+            }
         }
 
         if (class_exists('Illuminate\Foundation\Application')) {
-            $casters['Illuminate\Foundation\Application'] = 'Laravel\Tinker\TinkerCaster::castApplication';
+            if (class_exists('Illuminate\Foundation\ApplicationCaster')) {
+                $casters['Illuminate\Foundation\Application'] = 'Illuminate\Foundation\ApplicationCaster::cast';
+            } else {
+                $casters['Illuminate\Foundation\Application'] = 'Laravel\Tinker\TinkerCaster::castApplication';
+            }
         }
 
         return $casters;
