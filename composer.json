@@ -11,9 +11,9 @@
     ],
     "require": {
         "php": ">=5.5.9",
-        "illuminate/console": "~5.1",
-        "illuminate/contracts": "~5.1",
-        "illuminate/support": "~5.1",
+        "illuminate/console": "~5.1|^6.0",
+        "illuminate/contracts": "~5.1|^6.0",
+        "illuminate/support": "~5.1|^6.0",
         "psy/psysh": "0.7.*|0.8.*|0.9.*",
         "symfony/var-dumper": "~3.0|~4.0"
     },
