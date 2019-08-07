@@ -59,6 +59,7 @@ class TinkerCommand extends Command
         } else {
             $path = $this->getLaravel()->basePath().DIRECTORY_SEPARATOR.'vendor';
         }
+
         $path .= '/composer/autoload_classmap.php';
 
         $loader = ClassAliasAutoloader::register($shell, $path);
