@@ -11,9 +11,9 @@
     ],
     "require": {
         "php": ">=5.5.9",
-        "illuminate/console": "~5.1|^6.0",
-        "illuminate/contracts": "~5.1|^6.0",
-        "illuminate/support": "~5.1|^6.0",
+        "illuminate/console": "~5.1|^6.0|^7.0",
+        "illuminate/contracts": "~5.1|^6.0|^7.0",
+        "illuminate/support": "~5.1|^6.0|^7.0",
         "psy/psysh": "0.7.*|0.8.*|0.9.*",
         "symfony/var-dumper": "~3.0|~4.0"
     },
@@ -44,6 +44,6 @@
         "sort-packages": true
     },
     "suggest": {
-        "illuminate/database": "The Illuminate Database package (~5.1)."
+        "illuminate/database": "The Illuminate Database package (~5.1|^6.0|^7.0)."
     }
 }
