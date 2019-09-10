@@ -2,8 +2,8 @@
 
 namespace Laravel\Tinker;
 
-use Psy\Shell;
 use Illuminate\Support\Str;
+use Psy\Shell;
 
 class ClassAliasAutoloader
 {
