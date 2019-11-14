@@ -1,13 +1,16 @@
----
-name: "🔒 Security Vulnerabilities"
-about: 'For reporting security-related issues, see: https://github.com/laravel/laravel#security-vulnerabilities'
----
+# Security Policy
 
-PLEASE DON'T DISCLOSE SECURITY-RELATED ISSUES PUBLICLY, SEE BELOW.
+**PLEASE DON'T DISCLOSE SECURITY-RELATED ISSUES PUBLICLY, [SEE BELOW](#reporting-a-vulnerability).**
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+## Supported Versions
 
-Public PGP Key:
+Only the latest major version receives security fixes.
+
+## Reporting a Vulnerability
+
+If you discover a security vulnerability within Laravel, please send an email to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+
+### Public PGP Key
 
 ```
 -----BEGIN PGP PUBLIC KEY BLOCK-----
