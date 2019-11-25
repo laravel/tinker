@@ -11,17 +11,17 @@
     ],
     "require": {
         "php": ">=5.5.9",
-        "illuminate/console": "~5.1|^6.0|^7.0",
-        "illuminate/contracts": "~5.1|^6.0|^7.0",
-        "illuminate/support": "~5.1|^6.0|^7.0",
+        "illuminate/console": "^6.0|^7.0",
+        "illuminate/contracts": "^6.0|^7.0",
+        "illuminate/support": "^6.0|^7.0",
         "psy/psysh": "^0.9.0",
         "symfony/var-dumper": "^4.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^4.0|^5.0"
+        "phpunit/phpunit": "^8.0"
     },
     "suggest": {
-        "illuminate/database": "The Illuminate Database package (~5.1|^6.0|^7.0)."
+        "illuminate/database": "The Illuminate Database package (^6.0|^7.0)."
     },
     "autoload": {
         "psr-4": {
