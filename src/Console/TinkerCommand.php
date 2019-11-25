@@ -36,7 +36,7 @@ class TinkerCommand extends Command
     /**
      * Execute the console command.
      *
-     * @return void
+     * @return int
      */
     public function handle()
     {
@@ -69,6 +69,8 @@ class TinkerCommand extends Command
         } finally {
             $loader->unregister();
         }
+
+        return 0;
     }
 
     /**
