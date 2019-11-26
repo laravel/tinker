@@ -2,7 +2,7 @@
 
 namespace Laravel\Tinker;
 
-use Illuminate\ContractsSupport\DeferrableProvider;
+use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Foundation\Application as LaravelApplication;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Lumen\Application as LumenApplication;
