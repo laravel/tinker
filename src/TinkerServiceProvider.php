@@ -3,19 +3,13 @@
 namespace Laravel\Tinker;
 
 use Illuminate\Foundation\Application as LaravelApplication;
+use Illuminate\Support\Contracts\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Lumen\Application as LumenApplication;
 use Laravel\Tinker\Console\TinkerCommand;
 
-class TinkerServiceProvider extends ServiceProvider
+class TinkerServiceProvider extends ServiceProvider implements DeferrableProvider
 {
-    /**
-     * Indicates if loading of the provider is deferred.
-     *
-     * @var bool
-     */
-    protected $defer = true;
-
     /**
      * Boot the service provider.
      *
