@@ -2,10 +2,10 @@
 
 namespace Laravel\Tinker;
 
-use Illuminate\Support\ServiceProvider;
-use Laravel\Tinker\Console\TinkerCommand;
-use Laravel\Lumen\Application as LumenApplication;
 use Illuminate\Foundation\Application as LaravelApplication;
+use Illuminate\Support\ServiceProvider;
+use Laravel\Lumen\Application as LumenApplication;
+use Laravel\Tinker\Console\TinkerCommand;
 
 class TinkerServiceProvider extends ServiceProvider
 {
