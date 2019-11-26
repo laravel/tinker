@@ -2,9 +2,9 @@
 
 namespace Laravel\Tinker\Tests;
 
-use PHPUnit\Framework\TestCase;
-use Laravel\Tinker\TinkerCaster;
 use Illuminate\Support\Collection;
+use Laravel\Tinker\TinkerCaster;
+use PHPUnit\Framework\TestCase;
 
 class TinkerCasterTest extends TestCase
 {
