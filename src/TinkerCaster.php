@@ -69,6 +69,19 @@ class TinkerCaster
     }
 
     /**
+     * Get an array representing the properties of an html string.
+     *
+     * @param  \Illuminate\Support\HtmlString  $htmlString
+     * @return array
+     */
+    public static function castHtmlString($htmlString)
+    {
+        return [
+            Caster::PREFIX_VIRTUAL.'html' => $htmlString->toHtml(),
+        ];
+    }
+
+    /**
      * Get an array representing the properties of a model.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
