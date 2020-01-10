@@ -104,6 +104,7 @@ class TinkerCommand extends Command
     {
         $casters = [
             'Illuminate\Support\Collection' => 'Laravel\Tinker\TinkerCaster::castCollection',
+            'Illuminate\Support\HtmlString' => 'Laravel\Tinker\TinkerCaster::castHtmlString',
         ];
 
         if (class_exists('Illuminate\Database\Eloquent\Model')) {
