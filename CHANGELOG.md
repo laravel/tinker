@@ -1,6 +1,12 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/tinker/compare/v2.0.0...2.x)
+## [Unreleased](https://github.com/laravel/tinker/compare/v2.1.0...2.x)
+
+
+## [v2.1.0 (2020-01-14)](https://github.com/laravel/tinker/compare/v2.0.0...v2.1.0)
+
+### Added
+- Add `HtmlString` caster ([#87](https://github.com/laravel/tinker/pull/87))
 
 
 ## [v2.0.0 (2019-11-26)](https://github.com/laravel/tinker/compare/v1.0.10...v2.0.0)
