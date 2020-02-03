@@ -7,6 +7,7 @@ use Laravel\Tinker\ClassAliasAutoloader;
 use Psy\Configuration;
 use Psy\Shell;
 use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputOption;
 
 class TinkerCommand extends Command
 {
@@ -63,6 +64,14 @@ class TinkerCommand extends Command
         $path .= '/composer/autoload_classmap.php';
 
         $loader = ClassAliasAutoloader::register($shell, $path);
+
+        if ($code = $this->option('execute')) {
+            $shell->execute($code);
+
+            $loader->unregister();
+
+            return 0;
+        }
 
         try {
             $shell->run();
@@ -127,6 +136,18 @@ class TinkerCommand extends Command
     {
         return [
             ['include', InputArgument::IS_ARRAY, 'Include file(s) before starting tinker'],
+        ];
+    }
+
+    /**
+     * Get the console command options.
+     *
+     * @return array
+     */
+    protected function getOptions()
+    {
+        return [
+            ['execute', null, InputOption::VALUE_OPTIONAL, 'Execute the given bit of code inside Tinker'],
         ];
     }
 }
