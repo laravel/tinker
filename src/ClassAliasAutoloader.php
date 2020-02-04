@@ -22,6 +22,27 @@ class ClassAliasAutoloader
     protected $classes = [];
 
     /**
+     * Path to the vendor directory.
+     *
+     * @var string
+     */
+    protected $vendorPath;
+
+    /**
+     * Explicitly included namespaces/classes.
+     *
+     * @var \Illuminate\Support\Collection
+     */
+    protected $includedAliases;
+
+    /**
+     * Excluded namespaces/classes.
+     *
+     * @var \Illuminate\Support\Collection
+     */
+    protected $excludedAliases;
+
+    /**
      * Register a new alias loader instance.
      *
      * @param  \Psy\Shell  $shell
@@ -45,21 +66,14 @@ class ClassAliasAutoloader
     public function __construct(Shell $shell, $classMapPath)
     {
         $this->shell = $shell;
-
-        $vendorPath = dirname(dirname($classMapPath));
+        $this->vendorPath = dirname(dirname($classMapPath));
+        $this->includedAliases = collect(config('tinker.alias', []));
+        $this->excludedAliases = collect(config('tinker.dont_alias', []));
 
         $classes = require $classMapPath;
 
-        $excludedAliases = collect(config('tinker.dont_alias', []));
-
         foreach ($classes as $class => $path) {
-            if (! Str::contains($class, '\\') || Str::startsWith($path, $vendorPath)) {
-                continue;
-            }
-
-            if (! $excludedAliases->filter(function ($alias) use ($class) {
-                return Str::startsWith($class, $alias);
-            })->isEmpty()) {
+            if (! $this->isAliasable($class, $path)) {
                 continue;
             }
 
@@ -112,5 +126,36 @@ class ClassAliasAutoloader
     public function __destruct()
     {
         $this->unregister();
+    }
+
+    /**
+     * Whether a class may be aliased.
+     *
+     * @param  string  $class
+     * @param  string  $path
+     */
+    public function isAliasable($class, $path)
+    {
+        if (! Str::contains($class, '\\')) {
+            return false;
+        }
+
+        if (! $this->includedAliases->filter(function ($alias) use ($class) {
+            return Str::startsWith($class, $alias);
+        })->isEmpty()) {
+            return true;
+        }
+
+        if (Str::startsWith($path, $this->vendorPath)) {
+            return false;
+        }
+
+        if (! $this->excludedAliases->filter(function ($alias) use ($class) {
+            return Str::startsWith($class, $alias);
+        })->isEmpty()) {
+            return false;
+        }
+
+        return true;
     }
 }

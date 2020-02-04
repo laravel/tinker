@@ -32,4 +32,19 @@ return [
         'App\Nova',
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Alias Whitelist
+    |--------------------------------------------------------------------------
+    |
+    | Tinker will not automatically alias classes in your vendor namespaces.
+    | However, you may wish to allow this for certain classes, which you
+    | may accomplish by listing the classes in the following array.
+    |
+    */
+
+    'alias' => [
+        //
+    ],
+
 ];
