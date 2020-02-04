@@ -36,11 +36,11 @@ class ClassAliasAutoloaderTest extends TestCase
 
     public function testCanExcludeNamespacesFromAliasing()
     {
-        set_config('tinker.dont_alias', ['App\Baz']);
-
         $this->loader = ClassAliasAutoloader::register(
             $shell = Mockery::mock(Shell::class),
-            $this->classmapPath
+            $this->classmapPath,
+            [],
+            ['App\Baz']
         );
 
         $shell->shouldNotReceive('writeStdout');
@@ -62,11 +62,10 @@ class ClassAliasAutoloaderTest extends TestCase
 
     public function testVendorClassesCanBeWhitelisted()
     {
-        set_config('tinker.alias', ['One\Two']);
-
         $this->loader = ClassAliasAutoloader::register(
             $shell = Mockery::mock(Shell::class),
-            $this->classmapPath
+            $this->classmapPath,
+            ['One\Two']
         );
 
         $shell->shouldReceive('writeStdout')

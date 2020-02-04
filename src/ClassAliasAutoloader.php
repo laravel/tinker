@@ -47,11 +47,13 @@ class ClassAliasAutoloader
      *
      * @param  \Psy\Shell  $shell
      * @param  string  $classMapPath
+     * @param  array   $includedAliases
+     * @param  array   $excludedAliases
      * @return static
      */
-    public static function register(Shell $shell, $classMapPath)
+    public static function register(Shell $shell, $classMapPath, array $includedAliases = [], array $excludedAliases = [])
     {
-        return tap(new static($shell, $classMapPath), function ($loader) {
+        return tap(new static($shell, $classMapPath, $includedAliases, $excludedAliases), function ($loader) {
             spl_autoload_register([$loader, 'aliasClass']);
         });
     }
@@ -61,14 +63,16 @@ class ClassAliasAutoloader
      *
      * @param  \Psy\Shell  $shell
      * @param  string  $classMapPath
+     * @param  array  $includedAliases
+     * @param  array  $excludedAliases
      * @return void
      */
-    public function __construct(Shell $shell, $classMapPath)
+    public function __construct(Shell $shell, $classMapPath, array $includedAliases = [], array $excludedAliases = [])
     {
         $this->shell = $shell;
         $this->vendorPath = dirname(dirname($classMapPath));
-        $this->includedAliases = collect(config('tinker.alias', []));
-        $this->excludedAliases = collect(config('tinker.dont_alias', []));
+        $this->includedAliases = collect($includedAliases);
+        $this->excludedAliases = collect($excludedAliases);
 
         $classes = require $classMapPath;
 
@@ -97,9 +101,7 @@ class ClassAliasAutoloader
             return;
         }
 
-        $fullName = isset($this->classes[$class])
-            ? $this->classes[$class]
-            : false;
+        $fullName = $this->classes[$class] ?? false;
 
         if ($fullName) {
             $this->shell->writeStdout("[!] Aliasing '{$class}' to '{$fullName}' for this Tinker session.\n");

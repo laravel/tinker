@@ -62,7 +62,11 @@ class TinkerCommand extends Command
 
         $path .= '/composer/autoload_classmap.php';
 
-        $loader = ClassAliasAutoloader::register($shell, $path);
+        $config = $this->getLaravel()->make('config');
+
+        $loader = ClassAliasAutoloader::register(
+            $shell, $path, $config->get('tinker.alias', []), $config->get('tinker.dont_alias', [])
+        );
 
         try {
             $shell->run();
@@ -88,7 +92,9 @@ class TinkerCommand extends Command
             }
         }
 
-        foreach (config('tinker.commands', []) as $command) {
+        $config = $this->getLaravel()->make('config');
+
+        foreach ($config->get('tinker.commands', []) as $command) {
             $commands[] = $this->getApplication()->resolve($command);
         }
 
