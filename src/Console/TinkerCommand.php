@@ -147,7 +147,7 @@ class TinkerCommand extends Command
     protected function getOptions()
     {
         return [
-            ['execute', null, InputOption::VALUE_OPTIONAL, 'Execute the given bit of code inside Tinker'],
+            ['execute', null, InputOption::VALUE_OPTIONAL, 'Execute the given code using Tinker'],
         ];
     }
 }
