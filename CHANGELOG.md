@@ -1,6 +1,13 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/tinker/compare/v2.1.0...2.x)
+## [Unreleased](https://github.com/laravel/tinker/compare/v2.2.0...2.x)
+
+
+## [v2.2.0 (2020-02-05)](https://github.com/laravel/tinker/compare/v2.1.0...v2.2.0)
+
+### Added
+- Support vendor class aliasing ([#88](https://github.com/laravel/tinker/pull/88))
+- Add `--execute` option to console command ([#89](https://github.com/laravel/tinker/pull/89))
 
 
 ## [v2.1.0 (2020-01-14)](https://github.com/laravel/tinker/compare/v2.0.0...v2.1.0)
