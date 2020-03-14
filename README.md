@@ -13,7 +13,7 @@ Laravel Tinker is a powerful REPL for the Laravel framework.
 
 ## Official Documentation
 
-Documentation for Tinker can be found on the [Laravel website](https://laravel.com/docs/6.x/artisan#tinker).
+Documentation for Tinker can be found on the [Laravel website](https://laravel.com/docs/7.x/artisan#tinker).
 
 ## Contributing
 
