@@ -6,7 +6,7 @@
 ## [v2.3.0 (2020-03-17)](https://github.com/laravel/tinker/compare/v2.2.0...v2.3.0)
 
 ### Added
-- Allow Laravel 6 ([#90](https://github.com/laravel/tinker/pull/90))
+- Allow Laravel 8 ([#90](https://github.com/laravel/tinker/pull/90))
 - Allow psy/psysh 0.10 ([#95](https://github.com/laravel/tinker/pull/95))
 
 
