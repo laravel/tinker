@@ -1,6 +1,13 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/tinker/compare/v2.2.0...2.x)
+## [Unreleased](https://github.com/laravel/tinker/compare/v2.3.0...2.x)
+
+
+## [v2.3.0 (2020-03-17)](https://github.com/laravel/tinker/compare/v2.2.0...v2.3.0)
+
+### Added
+- Allow Laravel 8 ([#90](https://github.com/laravel/tinker/pull/90))
+- Allow psy/psysh 0.10 ([#95](https://github.com/laravel/tinker/pull/95))
 
 
 ## [v2.2.0 (2020-02-05)](https://github.com/laravel/tinker/compare/v2.1.0...v2.2.0)
