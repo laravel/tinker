@@ -6,6 +6,7 @@ use Illuminate\Console\Command;
 use Laravel\Tinker\ClassAliasAutoloader;
 use Psy\Configuration;
 use Psy\Shell;
+use Psy\VersionUpdater\Checker;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 
@@ -43,9 +44,8 @@ class TinkerCommand extends Command
     {
         $this->getApplication()->setCatchExceptions(false);
 
-        $config = new Configuration([
-            'updateCheck' => 'never',
-        ]);
+        $config = Configuration::fromInput($this->input);
+        $config->setUpdateCheck(Checker::NEVER);
 
         $config->getPresenter()->addCasters(
             $this->getCasters()
@@ -55,11 +55,7 @@ class TinkerCommand extends Command
         $shell->addCommands($this->getCommands());
         $shell->setIncludes($this->argument('include'));
 
-        if (isset($_ENV['COMPOSER_VENDOR_DIR'])) {
-            $path = $_ENV['COMPOSER_VENDOR_DIR'];
-        } else {
-            $path = $this->getLaravel()->basePath().DIRECTORY_SEPARATOR.'vendor';
-        }
+        $path = Env::get('COMPOSER_VENDOR_DIR', $this->getLaravel()->basePath().DIRECTORY_SEPARATOR.'vendor');
 
         $path .= '/composer/autoload_classmap.php';
 
