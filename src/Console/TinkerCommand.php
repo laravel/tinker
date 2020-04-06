@@ -3,6 +3,7 @@
 namespace Laravel\Tinker\Console;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Env;
 use Laravel\Tinker\ClassAliasAutoloader;
 use Psy\Configuration;
 use Psy\Shell;
