@@ -6,10 +6,10 @@ use Illuminate\Contracts\Container\Container;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Foundation\Application as LaravelApplication;
 use Illuminate\Support\ServiceProvider;
-use Psy\Configuration;
-use Psy\Shell;
 use Laravel\Lumen\Application as LumenApplication;
 use Laravel\Tinker\Console\TinkerCommand;
+use Psy\Configuration;
+use Psy\Shell;
 
 class TinkerServiceProvider extends ServiceProvider implements DeferrableProvider
 {
