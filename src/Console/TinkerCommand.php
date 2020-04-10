@@ -52,7 +52,7 @@ class TinkerCommand extends Command
             $this->getCasters()
         );
 
-        $shell = new TinkerShell($config);
+        $shell = new TinkerShell($this->getLaravel()->make('events'), $config);
         $shell->addCommands($this->getCommands());
         $shell->setIncludes($this->argument('include'));
 
