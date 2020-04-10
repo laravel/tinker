@@ -5,8 +5,8 @@ namespace Laravel\Tinker\Console;
 use Illuminate\Console\Command;
 use Illuminate\Support\Env;
 use Laravel\Tinker\ClassAliasAutoloader;
+use Laravel\Tinker\Shell\TinkerShell;
 use Psy\Configuration;
-use Psy\Shell;
 use Psy\VersionUpdater\Checker;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
@@ -52,7 +52,7 @@ class TinkerCommand extends Command
             $this->getCasters()
         );
 
-        $shell = new Shell($config);
+        $shell = new TinkerShell($config);
         $shell->addCommands($this->getCommands());
         $shell->setIncludes($this->argument('include'));
 
