@@ -2,9 +2,12 @@
 
 namespace Laravel\Tinker;
 
+use Illuminate\Contracts\Container\Container;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Foundation\Application as LaravelApplication;
 use Illuminate\Support\ServiceProvider;
+use Psy\Configuration;
+use Psy\Shell;
 use Laravel\Lumen\Application as LumenApplication;
 use Laravel\Tinker\Console\TinkerCommand;
 
@@ -35,6 +38,10 @@ class TinkerServiceProvider extends ServiceProvider implements DeferrableProvide
      */
     public function register()
     {
+        $this->app->bind(Shell::class, function (Container $app, array $params) {
+            return new Shell($params[0] ?? new Configuration);
+        });
+
         $this->app->singleton('command.tinker', function () {
             return new TinkerCommand;
         });
@@ -49,6 +56,6 @@ class TinkerServiceProvider extends ServiceProvider implements DeferrableProvide
      */
     public function provides()
     {
-        return ['command.tinker'];
+        return [Shell::class, 'command.tinker'];
     }
 }
