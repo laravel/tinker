@@ -5,6 +5,7 @@ namespace Laravel\Tinker\Console;
 use Illuminate\Console\Command;
 use Illuminate\Support\Env;
 use Laravel\Tinker\ClassAliasAutoloader;
+use Laravel\Tinker\Shell\Listener\TinkerEventEmitter;
 use Laravel\Tinker\Shell\TinkerShell;
 use Psy\Configuration;
 use Psy\VersionUpdater\Checker;
@@ -52,7 +53,9 @@ class TinkerCommand extends Command
             $this->getCasters()
         );
 
-        $shell = new TinkerShell($this->getLaravel()->make('events'), $config);
+        $eventEmitter = new TinkerEventEmitter($this->getLaravel()->make('events'));
+
+        $shell = new TinkerShell($eventEmitter, $config);
         $shell->addCommands($this->getCommands());
         $shell->setIncludes($this->argument('include'));
 
