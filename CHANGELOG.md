@@ -1,6 +1,12 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/tinker/compare/v2.4.0...master)
+## [Unreleased](https://github.com/laravel/tinker/compare/v2.4.1...master)
+
+
+## [v2.4.1 (2020-07-07)](https://github.com/laravel/tinker/compare/v2.4.0...v2.4.1)
+
+### Fixed
+- Fixed execute not unregistering loader and exit code ([#100](https://github.com/laravel/tinker/pull/100))
 
 
 ## [v2.4.0 (2020-04-07)](https://github.com/laravel/tinker/compare/v2.3.0...v2.4.0)
