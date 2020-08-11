@@ -1,6 +1,12 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/tinker/compare/v2.4.1...master)
+## [Unreleased](https://github.com/laravel/tinker/compare/v2.4.2...master)
+
+
+## [v2.4.2 (2020-08-11)](https://github.com/laravel/tinker/compare/v2.4.1...v2.4.2)
+
+### Fixed
+- Fix missing output while using execute option ([#109](https://github.com/laravel/tinker/pull/109))
 
 
 ## [v2.4.1 (2020-07-07)](https://github.com/laravel/tinker/compare/v2.4.0...v2.4.1)
