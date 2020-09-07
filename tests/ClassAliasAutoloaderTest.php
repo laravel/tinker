@@ -9,12 +9,12 @@ use Psy\Shell;
 
 class ClassAliasAutoloaderTest extends TestCase
 {
-    public function setUp(): void
+    protected function setUp(): void
     {
         $this->classmapPath = __DIR__.'/fixtures/vendor/composer/autoload_classmap.php';
     }
 
-    public function tearDown(): void
+    protected function tearDown(): void
     {
         $this->loader->unregister();
     }
