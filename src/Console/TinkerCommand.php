@@ -52,8 +52,7 @@ class TinkerCommand extends Command
             $this->getCasters()
         );
 
-        $shell = $this->getLaravel()->make(Shell::class, [$config]);
-
+        $shell = new Shell($config);
         $shell->addCommands($this->getCommands());
         $shell->setIncludes($this->argument('include'));
 
