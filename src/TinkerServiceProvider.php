@@ -39,7 +39,7 @@ class TinkerServiceProvider extends ServiceProvider implements DeferrableProvide
     public function register()
     {
         $this->app->bind(Shell::class, function (Container $app, array $params) {
-             return new TinkerShell($params[0] ?? null);
+            return new TinkerShell($params[0] ?? null);
         });
 
         $this->app->singleton('command.tinker', function () {
