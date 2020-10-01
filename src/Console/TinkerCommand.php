@@ -53,6 +53,7 @@ class TinkerCommand extends Command
         );
 
         $shell = $this->getLaravel()->make(Shell::class, [$config]);
+
         $shell->addCommands($this->getCommands());
         $shell->setIncludes($this->argument('include'));
 
