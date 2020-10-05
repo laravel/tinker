@@ -2,9 +2,9 @@
 
 <p align="center">
 <a href="https://github.com/laravel/tinker/actions"><img src="https://github.com/laravel/tinker/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/tinker"><img src="https://poser.pugx.org/laravel/tinker/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/tinker"><img src="https://poser.pugx.org/laravel/tinker/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/tinker"><img src="https://poser.pugx.org/laravel/tinker/license.svg" alt="License"></a>
+<a href="https://packagist.org/packages/laravel/tinker"><img src="https://img.shields.io/packagist/dt/laravel/tinker" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/tinker"><img src="https://img.shields.io/packagist/v/laravel/tinker" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/tinker"><img src="https://img.shields.io/packagist/l/laravel/tinker" alt="License"></a>
 </p>
 
 ## Introduction
