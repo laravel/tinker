@@ -12,5 +12,5 @@
 .gitattributes export-ignore
 .gitignore export-ignore
 .styleci.yml export-ignore
-CHANGELOG.md
+CHANGELOG.md export-ignore
 phpunit.xml.dist export-ignore
