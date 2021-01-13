@@ -1,6 +1,11 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/tinker/compare/v2.4.2...master)
+## [Unreleased](https://github.com/laravel/tinker/compare/v2.5.0...2.x)
+
+## [v2.5.0 (2020-10-29)](https://github.com/laravel/tinker/compare/v2.4.2...v2.5.0)
+
+### Added
+- PHP 8 Support ([#116](https://github.com/laravel/tinker/pull/116))
 
 
 ## [v2.4.2 (2020-08-11)](https://github.com/laravel/tinker/compare/v2.4.1...v2.4.2)
