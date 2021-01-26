@@ -1,6 +1,12 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/tinker/compare/v2.5.0...master)
+## [Unreleased](https://github.com/laravel/tinker/compare/v2.6.0...master)
+
+
+## [v2.6.0 (2021-01-26)](https://github.com/laravel/tinker/compare/v2.5.0...v2.6.0)
+
+### Added
+- Add Stringable caster ([#121](https://github.com/laravel/tinker/pull/121))
 
 
 ## [v2.5.0 (2020-10-29)](https://github.com/laravel/tinker/compare/v2.4.2...v2.5.0)
