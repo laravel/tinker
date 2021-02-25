@@ -113,7 +113,7 @@ class TinkerCaster
         $hidden = array_flip($model->getHidden());
 
         $appends = (function() {
-                return array_combine($this->appends, $this->appends);
+            return array_combine($this->appends, $this->appends);
         })->bindTo($model, $model)();
 
         foreach ($appends as $appended) {
@@ -121,6 +121,7 @@ class TinkerCaster
         }
 
         $results = [];
+        
         foreach ($attributes as $key => $value) {
             $prefix = '';
 
@@ -132,7 +133,7 @@ class TinkerCaster
                 $prefix = Caster::PREFIX_PROTECTED;
             }
 
-            $results[$prefix . $key] = $value;
+            $results[$prefix.$key] = $value;
         }
 
         return $results;
