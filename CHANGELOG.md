@@ -1,6 +1,12 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/tinker/compare/v2.6.0...2.x)
+## [Unreleased](https://github.com/laravel/tinker/compare/v2.6.1...2.x)
+
+
+## [v2.6.1 (2021-03-02)](https://github.com/laravel/tinker/compare/v2.6.0...v2.6.1)
+
+### Fixed
+- Display hidden/appended attributes for models ([#123](https://github.com/laravel/tinker/pull/123))
 
 
 ## [v2.6.0 (2021-01-26)](https://github.com/laravel/tinker/compare/v2.5.0...v2.6.0)
