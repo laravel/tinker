@@ -8,8 +8,8 @@ on:
 
 jobs:
   tests:
+    runs-on: ubuntu-18.04
 
-    runs-on: ubuntu-latest
     strategy:
       fail-fast: true
       matrix:
@@ -19,7 +19,7 @@ jobs:
           - php: 7.2
             laravel: ^8.0
 
-    name: P${{ matrix.php }} - L${{ matrix.laravel }}
+    name: PHP ${{ matrix.php }} - Laravel ${{ matrix.laravel }}
 
     steps:
       - name: Checkout code
