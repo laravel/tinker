@@ -47,8 +47,8 @@ class ClassAliasAutoloader
      *
      * @param  \Psy\Shell  $shell
      * @param  string  $classMapPath
-     * @param  array   $includedAliases
-     * @param  array   $excludedAliases
+     * @param  array  $includedAliases
+     * @param  array  $excludedAliases
      * @return static
      */
     public static function register(Shell $shell, $classMapPath, array $includedAliases = [], array $excludedAliases = [])
