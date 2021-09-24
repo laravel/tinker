@@ -47,4 +47,8 @@ return [
         'App\Nova',
     ],
 
+    'casters' => [
+        // class => caster_callback
+    ],
+
 ];
