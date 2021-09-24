@@ -48,7 +48,7 @@ return [
     ],
 
     'casters' => [
-        // class => caster_callback
+        // 'Foo::class' => 'FooCaster::castFoo',
     ],
 
 ];
