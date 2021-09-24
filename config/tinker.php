@@ -49,6 +49,7 @@ return [
 
     'casters' => [
         // 'Foo::class' => 'FooCaster::castFoo',
+        // 'Bar::class' => ['BarCaster', 'castBar],
     ],
 
 ];
