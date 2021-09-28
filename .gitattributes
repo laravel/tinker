@@ -7,6 +7,7 @@
 *.php diff=php
 
 /.github export-ignore
+/art export-ignore
 /tests export-ignore
 .editorconfig export-ignore
 .gitattributes export-ignore

@@ -1,6 +1,12 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/tinker/compare/v2.6.1...master)
+## [Unreleased](https://github.com/laravel/tinker/compare/v2.6.2...master)
+
+
+## [v2.6.2 (2021-09-28)](https://github.com/laravel/tinker/compare/v2.6.1...v2.6.2)
+
+### Added
+- Added custom caster support ([#133](https://github.com/laravel/tinker/pull/133))
 
 
 ## [v2.6.1 (2021-03-02)](https://github.com/laravel/tinker/compare/v2.6.0...v2.6.1)
