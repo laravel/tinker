@@ -1,6 +1,12 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/tinker/compare/v2.6.2...master)
+## [Unreleased](https://github.com/laravel/tinker/compare/v2.6.3...master)
+
+
+## [v2.6.3 (2021-12-07)](https://github.com/laravel/tinker/compare/v2.6.2...v2.6.3)
+
+### Changed
+- Add `migrate:install` to whitelisted commands ([#137](https://github.com/laravel/tinker/pull/137))
 
 
 ## [v2.6.2 (2021-09-28)](https://github.com/laravel/tinker/compare/v2.6.1...v2.6.2)
