@@ -1,6 +1,12 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/tinker/compare/v2.6.3...2.x)
+## [Unreleased](https://github.com/laravel/tinker/compare/v2.7.0...2.x)
+
+
+## [v2.7.0 (2022-01-12)](https://github.com/laravel/tinker/compare/v2.6.3...v2.7.0)
+
+### Changed
+- Laravel 9 and psych v0.11.x support ([#139](https://github.com/laravel/tinker/pull/139))
 
 
 ## [v2.6.3 (2021-12-07)](https://github.com/laravel/tinker/compare/v2.6.2...v2.6.3)
