@@ -1,6 +1,12 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/tinker/compare/v2.7.1...2.x)
+## [Unreleased](https://github.com/laravel/tinker/compare/v2.7.2...2.x)
+
+## [v2.7.2](https://github.com/laravel/tinker/compare/v2.7.1...v2.7.2) - 2022-03-23
+
+### Fixed
+
+- Add Laravel app instance to command by @driesvints in https://github.com/laravel/tinker/pull/146
 
 ## [v2.7.1](https://github.com/laravel/tinker/compare/v2.7.0...v2.7.1) - 2022-03-15
 
