@@ -17,6 +17,7 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 class Shell extends BaseShell
 {
     const BUFF_PROMPT = '  ';
+    const PROMPT = '> ';
 
     /**
      * The OutputStyle instance.
@@ -130,21 +131,5 @@ class Shell extends BaseShell
         }
 
         return true;
-    }
-
-    /**
-     * Get the current input prompt.
-     *
-     * @return string|null
-     */
-    protected function getPrompt()
-    {
-        if ($this->output->isQuiet() || $this->hasCode()) {
-            return parent::getPrompt();
-        }
-
-        return strtoupper(substr(PHP_OS, 0, 3)) === 'WIN'
-            ? '> '
-            : '❯ ';
     }
 }
