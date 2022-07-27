@@ -5,7 +5,8 @@ namespace Laravel\Tinker\Tests;
 use Laravel\Tinker\ClassAliasAutoloader;
 use Mockery;
 use PHPUnit\Framework\TestCase;
-use Psy\Shell;
+use Laravel\Tinker\Shell;
+use Symfony\Component\Console\Output\BufferedOutput;
 
 class ClassAliasAutoloaderTest extends TestCase
 {
@@ -26,12 +27,12 @@ class ClassAliasAutoloaderTest extends TestCase
             $this->classmapPath
         );
 
-        $shell->shouldReceive('writeStdout')
-            ->with("[!] Aliasing 'Bar' to 'App\Foo\Bar' for this Tinker session.\n")
-            ->once();
+        $output = new BufferedOutput();
+        $shell->shouldReceive('getOutput')->once()->andReturn($output);
 
         $this->assertTrue(class_exists('Bar'));
         $this->assertInstanceOf(\App\Foo\Bar::class, new \Bar);
+        $this->assertStringContainsString('Aliasing [Bar] to [App\Foo\Bar].', $output->fetch());
     }
 
     public function testCanExcludeNamespacesFromAliasing()
@@ -43,7 +44,7 @@ class ClassAliasAutoloaderTest extends TestCase
             ['App\Baz']
         );
 
-        $shell->shouldNotReceive('writeStdout');
+        $shell->shouldNotReceive('getOutput');
 
         $this->assertFalse(class_exists('Qux'));
     }
@@ -55,7 +56,7 @@ class ClassAliasAutoloaderTest extends TestCase
             $this->classmapPath
         );
 
-        $shell->shouldNotReceive('writeStdout');
+        $shell->shouldNotReceive('getOutput');
 
         $this->assertFalse(class_exists('Three'));
     }
@@ -68,11 +69,12 @@ class ClassAliasAutoloaderTest extends TestCase
             ['One\Two']
         );
 
-        $shell->shouldReceive('writeStdout')
-            ->with("[!] Aliasing 'Three' to 'One\Two\Three' for this Tinker session.\n")
-            ->once();
+        $output = new BufferedOutput();
+        $shell->shouldReceive('getOutput')->once()->andReturn($output);
 
         $this->assertTrue(class_exists('Three'));
         $this->assertInstanceOf(\One\Two\Three::class, new \Three);
+        $this->assertStringContainsString('Aliasing [Three] to [One\Two\Three].', $output->fetch());
+
     }
 }
