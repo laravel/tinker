@@ -3,9 +3,9 @@
 namespace Laravel\Tinker\Tests;
 
 use Laravel\Tinker\ClassAliasAutoloader;
+use Laravel\Tinker\Shell;
 use Mockery;
 use PHPUnit\Framework\TestCase;
-use Laravel\Tinker\Shell;
 use Symfony\Component\Console\Output\BufferedOutput;
 
 class ClassAliasAutoloaderTest extends TestCase
@@ -75,6 +75,5 @@ class ClassAliasAutoloaderTest extends TestCase
         $this->assertTrue(class_exists('Three'));
         $this->assertInstanceOf(\One\Two\Three::class, new \Three);
         $this->assertStringContainsString('Aliasing [Three] to [One\Two\Three].', $output->fetch());
-
     }
 }
