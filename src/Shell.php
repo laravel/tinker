@@ -59,7 +59,7 @@ class Shell extends BaseShell
         if ($exception instanceof PsyException) {
             [$type] = explode(': ', $exception->getMessage());
             $message = str_replace("$type: ", '', $message);
-            $type = trim(str_replace('PHP ', '', $type));
+            $type = strtoupper(trim(str_replace('PHP ', '', $type)));
         } else {
             $type = get_class($exception);
         }
