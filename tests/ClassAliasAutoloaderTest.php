@@ -10,7 +10,7 @@ use Psy\Shell;
 class ClassAliasAutoloaderTest extends TestCase
 {
     protected $classmapPath;
-    protected loader;
+    protected $loader;
     
     protected function setUp(): void
     {
