@@ -66,7 +66,7 @@ class TinkerCommand extends Command
             $shell, $path, $config->get('tinker.alias', []), $config->get('tinker.dont_alias', [])
         );
 
-        if ($code = $this->option('execute')) {
+        if ($code = $this->getCodeToRun()) {
             try {
                 $shell->setOutput($this->output);
                 $shell->execute($code);
@@ -81,6 +81,25 @@ class TinkerCommand extends Command
             return $shell->run();
         } finally {
             $loader->unregister();
+        }
+    }
+
+    /**
+     * Get the potential code to run passed through the command line.
+     *
+     * @return string|null
+     */
+    protected function getCodeToRun()
+    {
+        if ($code = $this->option('execute')) {
+            return $code;
+        }
+
+        if ($file = $this->option('file')) {
+            return str(file_get_contents($file))
+                ->squish()
+                ->replace('<?php', '')
+                ->finish(';');
         }
     }
 
@@ -157,6 +176,7 @@ class TinkerCommand extends Command
     {
         return [
             ['execute', null, InputOption::VALUE_OPTIONAL, 'Execute the given code using Tinker'],
+            ['file', null, InputOption::VALUE_OPTIONAL, 'Run the code in the given file'],
         ];
     }
 }
