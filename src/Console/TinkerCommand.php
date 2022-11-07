@@ -98,7 +98,7 @@ class TinkerCommand extends Command
         if ($file = $this->option('file')) {
             return str(file_get_contents($file))
                 ->squish()
-                ->replace('<?php', '')
+                ->ltrim('<?php')
                 ->finish(';');
         }
     }
