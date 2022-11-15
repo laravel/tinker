@@ -1,6 +1,12 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/tinker/compare/v2.7.2...2.x)
+## [Unreleased](https://github.com/laravel/tinker/compare/v2.7.3...2.x)
+
+## [v2.7.3](https://github.com/laravel/tinker/compare/v2.7.2...v2.7.3) - 2022-11-09
+
+### Changed
+
+- Set raw output when using `--execute` by @innocenzi in https://github.com/laravel/tinker/pull/155
 
 ## [v2.7.2](https://github.com/laravel/tinker/compare/v2.7.1...v2.7.2) - 2022-03-23
 
