@@ -11,9 +11,9 @@
     ],
     "require": {
         "php": "^7.2.5|^8.0",
-        "illuminate/console": "^6.0|^7.0|^8.0|^9.0",
-        "illuminate/contracts": "^6.0|^7.0|^8.0|^9.0",
-        "illuminate/support": "^6.0|^7.0|^8.0|^9.0",
+        "illuminate/console": "^6.0|^7.0|^8.0|^9.0|^10.0",
+        "illuminate/contracts": "^6.0|^7.0|^8.0|^9.0|^10.0",
+        "illuminate/support": "^6.0|^7.0|^8.0|^9.0|^10.0",
         "psy/psysh": "^0.10.4|^0.11.1",
         "symfony/var-dumper": "^4.3.4|^5.0|^6.0"
     },
@@ -22,7 +22,7 @@
         "phpunit/phpunit": "^8.5.8|^9.3.3"
     },
     "suggest": {
-        "illuminate/database": "The Illuminate Database package (^6.0|^7.0|^8.0|^9.0)."
+        "illuminate/database": "The Illuminate Database package (^6.0|^7.0|^8.0|^9.0|^10.0)."
     },
     "autoload": {
         "psr-4": {
