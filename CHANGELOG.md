@@ -1,6 +1,12 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/tinker/compare/v2.7.3...2.x)
+## [Unreleased](https://github.com/laravel/tinker/compare/v2.8.0...2.x)
+
+## [v2.8.0](https://github.com/laravel/tinker/compare/v2.7.3...v2.8.0) - 2023-01-10
+
+### Added
+
+- Laravel v10 support
 
 ## [v2.7.3](https://github.com/laravel/tinker/compare/v2.7.2...v2.7.3) - 2022-11-09
 
