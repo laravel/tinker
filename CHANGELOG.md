@@ -1,6 +1,10 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/tinker/compare/v2.8.0...2.x)
+## [Unreleased](https://github.com/laravel/tinker/compare/v2.8.1...2.x)
+
+## [v2.8.1](https://github.com/laravel/tinker/compare/v2.8.0...v2.8.1) - 2023-02-15
+
+- Cast ProcessResult objects by @mpociot in https://github.com/laravel/tinker/pull/159
 
 ## [v2.8.0](https://github.com/laravel/tinker/compare/v2.7.3...v2.8.0) - 2023-01-10
 
