@@ -129,7 +129,7 @@ class TinkerCaster
         $hidden = array_flip($model->getHidden());
 
         $appends = (function () {
-            return array_combine($this->appends, $this->appends);
+            return array_combine($this->appends, $this->appends); // @phpstan-ignore-line
         })->bindTo($model, $model)();
 
         foreach ($appends as $appended) {

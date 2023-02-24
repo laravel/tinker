@@ -1,0 +1,10 @@
+parameters:
+  paths:
+    - config
+    - src
+
+  level: 0
+
+  ignoreErrors:
+    - "#Unsafe usage of new static\\(\\)#"
+    - "#Class Laravel\\\\Lumen\\\\Application not found.#"
