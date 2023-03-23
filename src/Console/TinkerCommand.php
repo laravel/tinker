@@ -46,6 +46,7 @@ class TinkerCommand extends Command
         $this->getApplication()->setCatchExceptions(false);
 
         $config = Configuration::fromInput($this->input);
+        $config->setRequireSemicolons(true);
         $config->setUpdateCheck(Checker::NEVER);
 
         $config->getPresenter()->addCasters(
