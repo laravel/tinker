@@ -14,7 +14,7 @@
         "illuminate/console": "^6.0|^7.0|^8.0|^9.0|^10.0|^11.0",
         "illuminate/contracts": "^6.0|^7.0|^8.0|^9.0|^10.0|^11.0",
         "illuminate/support": "^6.0|^7.0|^8.0|^9.0|^10.0|^11.0",
-        "psy/psysh": "^0.12",
+        "psy/psysh": "^0.11.1|^0.12",
         "symfony/var-dumper": "^4.3.4|^5.0|^6.0|^7.0"
     },
     "require-dev": {
