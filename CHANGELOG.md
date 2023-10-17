@@ -1,6 +1,15 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/tinker/compare/v2.8.0...2.x)
+## [Unreleased](https://github.com/laravel/tinker/compare/v2.8.2...2.x)
+
+## [v2.8.2](https://github.com/laravel/tinker/compare/v2.8.1...v2.8.2) - 2023-08-15
+
+- [2.x] Adds type checking by [@nunomaduro](https://github.com/nunomaduro) in https://github.com/laravel/tinker/pull/160
+- [2.x] Remove unused `orchestra/testbench` deps by [@crynobone](https://github.com/crynobone) in https://github.com/laravel/tinker/pull/166
+
+## [v2.8.1](https://github.com/laravel/tinker/compare/v2.8.0...v2.8.1) - 2023-02-15
+
+- Cast ProcessResult objects by @mpociot in https://github.com/laravel/tinker/pull/159
 
 ## [v2.8.0](https://github.com/laravel/tinker/compare/v2.7.3...v2.8.0) - 2023-01-10
 
