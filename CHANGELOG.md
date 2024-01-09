@@ -1,6 +1,11 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/tinker/compare/v2.8.2...2.x)
+## [Unreleased](https://github.com/laravel/tinker/compare/v2.9.0...2.x)
+
+## [v2.9.0](https://github.com/laravel/tinker/compare/v2.8.2...v2.9.0) - 2024-01-04
+
+* Update PsySH dependency to v0.12 by [@bobthecow](https://github.com/bobthecow) in https://github.com/laravel/tinker/pull/170
+* [2.x] Merging develop by [@nunomaduro](https://github.com/nunomaduro) in https://github.com/laravel/tinker/pull/171
 
 ## [v2.8.2](https://github.com/laravel/tinker/compare/v2.8.1...v2.8.2) - 2023-08-15
 
