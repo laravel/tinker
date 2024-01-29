@@ -14,7 +14,7 @@ body:
   - type: input
     attributes:
       label: Laravel Version
-      description: Provide the Laravel version that you are using.
+      description: Provide the Laravel version that you are using. [Please ensure it is still supported.](https://laravel.com/docs/releases#support-policy)
       placeholder: 10.4.1
     validations:
       required: true
