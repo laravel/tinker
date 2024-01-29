@@ -1,9 +1,9 @@
 name: Bug Report
-description: "Report a general library issue."
+description: "Report something that's broken."
 body:
   - type: markdown
     attributes:
-      value: "Before submitting your report, [please ensure your Laravel version is still supported](https://laravel.com/docs/releases#support-policy)."
+      value: "Please read [our full contribution guide](https://laravel.com/docs/contributions#bug-reports) before submitting bug reports. If you notice improper DocBlock, PHPStan, or IDE warnings while using Laravel, do not create a GitHub issue. Instead, please submit a pull request to fix the problem."
   - type: input
     attributes:
       label: Tinker Version
