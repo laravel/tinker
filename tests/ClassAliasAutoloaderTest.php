@@ -9,6 +9,9 @@ use Psy\Shell;
 
 class ClassAliasAutoloaderTest extends TestCase
 {
+    protected $classmapPath;
+    protected $loader;
+
     protected function setUp(): void
     {
         $this->classmapPath = __DIR__.'/fixtures/vendor/composer/autoload_classmap.php';

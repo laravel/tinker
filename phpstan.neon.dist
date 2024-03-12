@@ -1,0 +1,11 @@
+parameters:
+  paths:
+    - config
+    - src
+
+  level: 0
+
+  ignoreErrors:
+    - "#Unsafe usage of new static\\(\\)#"
+    - "#Class Illuminate\\\\Foundation\\\\Application not found.#"
+    - "#Class Laravel\\\\Lumen\\\\Application not found.#"
