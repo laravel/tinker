@@ -51,9 +51,9 @@ class ClassAliasAutoloader
      * @param  array  $excludedAliases
      * @return static
      */
-    public static function register(Shell $shell, $classMapPath, array $includedAliases = [], array $excludedAliases = [])
+    public static function register(Shell $shell, $classMapPath, array $includedAliases = [], array $excludedAliases = [], array $classAliases = [])
     {
-        return tap(new static($shell, $classMapPath, $includedAliases, $excludedAliases), function ($loader) {
+        return tap(new static($shell, $classMapPath, $includedAliases, $excludedAliases, $classAliases), function ($loader) {
             spl_autoload_register([$loader, 'aliasClass']);
         });
     }
@@ -67,7 +67,7 @@ class ClassAliasAutoloader
      * @param  array  $excludedAliases
      * @return void
      */
-    public function __construct(Shell $shell, $classMapPath, array $includedAliases = [], array $excludedAliases = [])
+    public function __construct(Shell $shell, $classMapPath, array $includedAliases = [], array $excludedAliases = [], array $classAliases = [])
     {
         $this->shell = $shell;
         $this->vendorPath = dirname(dirname($classMapPath));
@@ -86,6 +86,13 @@ class ClassAliasAutoloader
             if (! isset($this->classes[$name])) {
                 $this->classes[$name] = $class;
             }
+        }
+
+        foreach ($classAliases as $alias => $class) {
+            if (!isset($classes[$class])) {
+                continue;
+            }
+            $this->classes[$alias] = $class;
         }
     }
 
