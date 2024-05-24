@@ -89,7 +89,7 @@ class ClassAliasAutoloader
         }
 
         foreach ($classAliases as $alias => $class) {
-            if (!isset($classes[$class])) {
+            if (! isset($classes[$class])) {
                 continue;
             }
             $this->classes[$alias] = $class;
