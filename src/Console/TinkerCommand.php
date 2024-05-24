@@ -72,7 +72,7 @@ class TinkerCommand extends Command
             $path,
             $config->get('tinker.alias', []),
             $config->get('tinker.dont_alias', []),
-            classAliases: $config->get('tinker.class_alias', [])
+            $config->get('tinker.class_alias', [])
         );
 
         if ($code = $this->option('execute')) {

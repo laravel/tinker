@@ -84,7 +84,9 @@ class ClassAliasAutoloaderTest extends TestCase
         $this->loader = ClassAliasAutoloader::register(
             $shell = Mockery::mock(Shell::class),
             $this->classmapPath,
-            classAliases: ['Four' => 'One\Two\Three']
+            [],
+            [],
+            ['Four' => 'One\Two\Three']
         );
 
         $shell->shouldReceive('writeStdout')
