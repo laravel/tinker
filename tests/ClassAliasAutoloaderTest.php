@@ -78,4 +78,22 @@ class ClassAliasAutoloaderTest extends TestCase
         $this->assertTrue(class_exists('Three'));
         $this->assertInstanceOf(\One\Two\Three::class, new \Three);
     }
+
+    public function testCanAliasClassesToAnotherName()
+    {
+        $this->loader = ClassAliasAutoloader::register(
+            $shell = Mockery::mock(Shell::class),
+            $this->classmapPath,
+            [],
+            [],
+            ['Four' => 'One\Two\Three']
+        );
+
+        $shell->shouldReceive('writeStdout')
+            ->with("[!] Aliasing 'Four' to 'One\Two\Three' for this Tinker session.\n")
+            ->once();
+
+        $this->assertTrue(class_exists('Four'));
+        $this->assertInstanceOf(\One\Two\Three::class, new \Four);
+    }
 }

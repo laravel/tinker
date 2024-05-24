@@ -68,7 +68,11 @@ class TinkerCommand extends Command
         $config = $this->getLaravel()->make('config');
 
         $loader = ClassAliasAutoloader::register(
-            $shell, $path, $config->get('tinker.alias', []), $config->get('tinker.dont_alias', [])
+            $shell,
+            $path,
+            $config->get('tinker.alias', []),
+            $config->get('tinker.dont_alias', []),
+            $config->get('tinker.class_alias', [])
         );
 
         if ($code = $this->option('execute')) {
