@@ -10,6 +10,7 @@ use Psy\Shell;
 use Psy\VersionUpdater\Checker;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
+use Composer\InstalledVersions;
 
 class TinkerCommand extends Command
 {
@@ -60,9 +61,13 @@ class TinkerCommand extends Command
         $shell->addCommands($this->getCommands());
         $shell->setIncludes($this->argument('include'));
 
-        $path = Env::get('COMPOSER_VENDOR_DIR', $this->getLaravel()->basePath().DIRECTORY_SEPARATOR.'vendor');
+        $vendorDir = Env::get('COMPOSER_VENDOR_DIR', $this->getLaravel()->basePath().DIRECTORY_SEPARATOR.'vendor');
 
-        $path .= '/composer/autoload_classmap.php';
+        if(!is_dir($vendorDir)){
+            $vendorDir = realpath(InstalledVersions::getRootPackage()['install_path'] . '/vendor');
+        }
+
+        $path = $vendorDir. '/composer/autoload_classmap.php';
 
         $config = $this->getLaravel()->make('config');
 
