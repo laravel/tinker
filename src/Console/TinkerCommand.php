@@ -2,6 +2,7 @@
 
 namespace Laravel\Tinker\Console;
 
+use Composer\InstalledVersions;
 use Illuminate\Console\Command;
 use Illuminate\Support\Env;
 use Laravel\Tinker\ClassAliasAutoloader;
@@ -60,7 +61,12 @@ class TinkerCommand extends Command
         $shell->addCommands($this->getCommands());
         $shell->setIncludes($this->argument('include'));
 
-        $path = Env::get('COMPOSER_VENDOR_DIR', $this->getLaravel()->basePath().DIRECTORY_SEPARATOR.'vendor');
+        $vendorDir = $this->getLaravel()->basePath().DIRECTORY_SEPARATOR.'vendor';
+        if(!is_dir($vendorDir)){
+            $vendorDir = realpath(InstalledVersions::getRootPackage()['install_path']) . DIRECTORY_SEPARATOR.'vendor';
+        }
+
+        $path = Env::get('COMPOSER_VENDOR_DIR', $vendorDir);
 
         $path .= '/composer/autoload_classmap.php';
 
