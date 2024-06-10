@@ -64,7 +64,7 @@ class TinkerCommand extends Command
         $vendorDir = Env::get('COMPOSER_VENDOR_DIR', $this->getLaravel()->basePath().DIRECTORY_SEPARATOR.'vendor');
 
         if(!is_dir($vendorDir)){
-            $vendorDir = realpath(InstalledVersions::getRootPackage()['install_path'] . '/vendor');
+            $vendorDir = realpath(InstalledVersions::getRootPackage()['install_path']) . DIRECTORY_SEPARATOR.'vendor';
         }
 
         $path = $vendorDir. '/composer/autoload_classmap.php';
