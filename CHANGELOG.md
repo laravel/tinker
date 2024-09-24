@@ -1,6 +1,13 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/tinker/compare/v2.9.0...2.x)
+## [Unreleased](https://github.com/laravel/tinker/compare/v2.10.0...2.x)
+
+## [v2.10.0](https://github.com/laravel/tinker/compare/v2.9.0...v2.10.0) - 2024-09-23
+
+* Use actions/checkout[@v4](https://github.com/v4) by [@Jubeki](https://github.com/Jubeki) in https://github.com/laravel/tinker/pull/172
+* Use new static analysis workflow by [@Jubeki](https://github.com/Jubeki) in https://github.com/laravel/tinker/pull/173
+* Replace dead link in Security Policy by [@Jubeki](https://github.com/Jubeki) in https://github.com/laravel/tinker/pull/180
+* [2.x] Supports PHP 8.4 by [@crynobone](https://github.com/crynobone) in https://github.com/laravel/tinker/pull/182
 
 ## [v2.9.0](https://github.com/laravel/tinker/compare/v2.8.2...v2.9.0) - 2024-01-04
 
