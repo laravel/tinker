@@ -55,4 +55,4 @@ jobs:
           composer update --prefer-dist --no-interaction --no-progress --with="illuminate/contracts=^${{ matrix.laravel }}"
 
       - name: Execute tests
-        run: vendor/bin/phpunit --verbose
+        run: vendor/bin/phpunit
