@@ -1,6 +1,11 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/tinker/compare/v2.10.0...2.x)
+## [Unreleased](https://github.com/laravel/tinker/compare/v2.10.1...2.x)
+
+## [v2.10.1](https://github.com/laravel/tinker/compare/v2.10.0...v2.10.1) - 2025-01-27
+
+* Update logo to support dark/light theme by [@milewski](https://github.com/milewski) in https://github.com/laravel/tinker/pull/183
+* [2.x] Supports Laravel 12 by [@crynobone](https://github.com/crynobone) in https://github.com/laravel/tinker/pull/185
 
 ## [v2.10.0](https://github.com/laravel/tinker/compare/v2.9.0...v2.10.0) - 2024-09-23
 
