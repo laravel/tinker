@@ -5,8 +5,8 @@ namespace Laravel\Tinker\Console;
 use Illuminate\Console\Command;
 use Illuminate\Support\Env;
 use Laravel\Tinker\ClassAliasAutoloader;
+use Laravel\Tinker\Shell\CustomShell;
 use Psy\Configuration;
-use Psy\Shell;
 use Psy\VersionUpdater\Checker;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
@@ -56,7 +56,7 @@ class TinkerCommand extends Command
             $config->setRawOutput(true);
         }
 
-        $shell = new Shell($config);
+        $shell = new CustomShell($config);
         $shell->addCommands($this->getCommands());
         $shell->setIncludes($this->argument('include'));
 
