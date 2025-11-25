@@ -1,6 +1,10 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/tinker/compare/v2.10.1...2.x)
+## [Unreleased](https://github.com/laravel/tinker/compare/v2.10.2...2.x)
+
+## [v2.10.2](https://github.com/laravel/tinker/compare/v2.10.1...v2.10.2) - 2025-11-20
+
+* [2.x] PHP 8.5 Compatibility by [@crynobone](https://github.com/crynobone) in https://github.com/laravel/tinker/pull/192
 
 ## [v2.10.1](https://github.com/laravel/tinker/compare/v2.10.0...v2.10.1) - 2025-01-27
 
