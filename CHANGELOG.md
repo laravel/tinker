@@ -1,6 +1,11 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/tinker/compare/v2.10.2...2.x)
+## [Unreleased](https://github.com/laravel/tinker/compare/v2.11.0...2.x)
+
+## [v2.11.0](https://github.com/laravel/tinker/compare/v2.10.2...v2.11.0) - 2025-12-19
+
+* perf: optimize ClassAliasAutoloader using contains() by [@Ayoub-Mabrouk](https://github.com/Ayoub-Mabrouk) in https://github.com/laravel/tinker/pull/194
+* Allow Symfony v8 by [@jnoordsij](https://github.com/jnoordsij) in https://github.com/laravel/tinker/pull/195
 
 ## [v2.10.2](https://github.com/laravel/tinker/compare/v2.10.1...v2.10.2) - 2025-11-20
 
