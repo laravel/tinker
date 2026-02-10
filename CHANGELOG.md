@@ -1,6 +1,10 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/tinker/compare/v2.11.0...2.x)
+## [Unreleased](https://github.com/laravel/tinker/compare/v2.11.1...2.x)
+
+## [v2.11.1](https://github.com/laravel/tinker/compare/v2.11.0...v2.11.1) - 2026-02-06
+
+* Avoid trust project prompts from PsySH by [@WendellAdriel](https://github.com/WendellAdriel) in https://github.com/laravel/tinker/pull/198
 
 ## [v2.11.0](https://github.com/laravel/tinker/compare/v2.10.2...v2.11.0) - 2025-12-19
 
