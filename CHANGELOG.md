@@ -1,6 +1,6 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/tinker/compare/v3.0.0..master)
+## [Unreleased](https://github.com/laravel/tinker/compare/v3.0.0...3.x)
 
 ## [v2.11.1](https://github.com/laravel/tinker/compare/v2.11.0...v2.11.1) - 2026-02-06
 
@@ -160,3 +160,10 @@
 ## v1.0.0 (2016-12-30)
 
 Initial commit.
+
+## [v3.0.0](https://github.com/laravel/tinker/compare/v3.0.0..master...v3.0.0) - 2026-03-17
+
+* [3.x] Return correct exit code on exceptions by [@LachlanArthur](https://github.com/LachlanArthur) in https://github.com/laravel/tinker/pull/165
+* [3.x] Remove supports for PHP 8.0 and 7.x by [@crynobone](https://github.com/crynobone) in https://github.com/laravel/tinker/pull/186
+* [3.x] Supports Laravel 13 by [@crynobone](https://github.com/crynobone) in https://github.com/laravel/tinker/pull/197
+* Avoid trust project prompts from PsySH by [@WendellAdriel](https://github.com/WendellAdriel) in https://github.com/laravel/tinker/pull/198
