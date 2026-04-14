@@ -1,6 +1,6 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/tinker/compare/v3.0.0...3.x)
+## [Unreleased](https://github.com/laravel/tinker/compare/v3.0.2...3.x)
 
 ## [v2.11.1](https://github.com/laravel/tinker/compare/v2.11.0...v2.11.1) - 2026-02-06
 
@@ -160,6 +160,10 @@
 ## v1.0.0 (2016-12-30)
 
 Initial commit.
+
+## [v3.0.2](https://github.com/laravel/tinker/compare/v3.0.0...v3.0.2) - 2026-03-17
+
+**Full Changelog**: https://github.com/laravel/tinker/compare/v3.0.0...v3.0.2
 
 ## [v3.0.0](https://github.com/laravel/tinker/compare/v3.0.0..master...v3.0.0) - 2026-03-17
 
