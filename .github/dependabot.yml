@@ -10,25 +10,3 @@ updates:
       github-actions:
         patterns:
           - "*"
-  - package-ecosystem: "github-actions"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-    cooldown:
-      default-days: 5
-    target-branch: "1.x"
-    groups:
-      github-actions:
-        patterns:
-          - "*"
-  - package-ecosystem: "github-actions"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-    cooldown:
-      default-days: 5
-    target-branch: "2.x"
-    groups:
-      github-actions:
-        patterns:
-          - "*"
