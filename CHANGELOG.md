@@ -1,6 +1,6 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/tinker/compare/v3.0.2...3.x)
+## [Unreleased](https://github.com/laravel/tinker/compare/v3.1.0...3.x)
 
 ## [v2.11.1](https://github.com/laravel/tinker/compare/v2.11.0...v2.11.1) - 2026-02-06
 
@@ -160,6 +160,33 @@
 ## v1.0.0 (2016-12-30)
 
 Initial commit.
+
+## [v3.1.0](https://github.com/laravel/tinker/compare/v3.0.2...v3.1.0) - 2026-10-16
+
+### What's Changed
+
+* Pin GitHub Actions to commit SHAs and add Dependabot config by [@joetannenbaum](https://github.com/joetannenbaum) in https://github.com/laravel/tinker/pull/200
+* Bump shivammathur/setup-php from 2.37.0 to 2.37.1 in the github-actions group by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/tinker/pull/202
+* Pin pull requests and issues workflows to latest laravel/.github by [@nunomaduro](https://github.com/nunomaduro) in https://github.com/laravel/tinker/pull/203
+* Add Dependabot cooldown of 5 days by [@nunomaduro](https://github.com/nunomaduro) in https://github.com/laravel/tinker/pull/204
+* Enable Dependabot auto-merge by [@nunomaduro](https://github.com/nunomaduro) in https://github.com/laravel/tinker/pull/206
+* Bump actions/checkout from 6.0.2 to 6.0.3 in the github-actions group by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/tinker/pull/207
+* Bump shivammathur/setup-php from 2.37.1 to 2.37.2 in the github-actions group by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/tinker/pull/208
+* Bump actions/checkout from 6.0.3 to 7.0.0 in the github-actions group by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/tinker/pull/209
+* Bump actions/checkout from 7.0.0 to 7.0.1 in the github-actions group by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/tinker/pull/210
+* Bump minimum PsySH version by [@lazerg](https://github.com/lazerg) in https://github.com/laravel/tinker/pull/212
+* Remove Mockery by [@jasonmccreary](https://github.com/jasonmccreary) in https://github.com/laravel/tinker/pull/214
+* Experimental supports for PHP 8.6 by [@crynobone](https://github.com/crynobone) in https://github.com/laravel/tinker/pull/215
+* Remove security policy in favor of the org-wide default by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/tinker/pull/216
+* Bump shivammathur/setup-php from 2.37.2 to 2.40.0 in the github-actions group by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/tinker/pull/217
+
+### New Contributors
+
+* [@joetannenbaum](https://github.com/joetannenbaum) made their first contribution in https://github.com/laravel/tinker/pull/200
+* [@jasonmccreary](https://github.com/jasonmccreary) made their first contribution in https://github.com/laravel/tinker/pull/214
+* [@pushpak1300](https://github.com/pushpak1300) made their first contribution in https://github.com/laravel/tinker/pull/216
+
+**Full Changelog**: https://github.com/laravel/tinker/compare/v3.0.2...v3.1.0
 
 ## [v3.0.2](https://github.com/laravel/tinker/compare/v3.0.0...v3.0.2) - 2026-03-17
 
